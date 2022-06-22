@@ -1,29 +1,38 @@
-//Accept one number from user if number is less than 10 then print "HELLO" otherwise print "demo"
+//write a program which accept number from user and print factors of that number
+
 #include<stdio.h>
 
-
-
-void Display(int iNo)
+void DisplayEvenFactor(int iNo)
 {
-   if(iNo<10)
-   {
-       printf("Hello\n");
-   }
-   else
-   {
-      printf("Demo\n");
+    int iCnt=0;
 
-   }
+    if(iNo<=0)
+    {
+        iNo=-iNo;
 
+    }
+
+    for(iCnt=1;iCnt<=(iNo/2);iCnt++)
+    {
+        if((iNo%iCnt==0)&& (iCnt%2)==0)
+        {
+            printf("%d  ",iCnt);
+        }
+    }
 }
+
+
+
 int main()
-{  
-    int iValue=0;
+{
+   int iValue=0;
 
-    printf("Enter Number\n");
-    scanf("%d",&iValue);
+   printf("Enter number\n");
+   scanf("%d",&iValue);
 
-    Display(iValue);
+
+   DisplayEvenFactor(iValue);
+
 
     return 0;
 }
